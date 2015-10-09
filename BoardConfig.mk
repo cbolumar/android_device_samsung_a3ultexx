@@ -20,17 +20,17 @@
 # definition file).
 #
 
-# Inherit from common a5ultexx
--include device/samsung/a5-common/BoardConfigCommon.mk
+# Inherit from common a3ultexx
+-include device/samsung/a3-common/BoardConfigCommon.mk
 
 # Inherit from the proprietary version
--include vendor/samsung/a5ultexx/BoardConfigVendor.mk
+-include vendor/samsung/a3ultexx/BoardConfigVendor.mk
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := a5ulte,a5ultexx,SM-A500FU
+TARGET_OTA_ASSERT_DEVICE := a3ulte,a3ultexx,SM-A300FU
 
 # Kernel
-TARGET_KERNEL_CONFIG := cyanogen_a5ultexx_defconfig
+TARGET_KERNEL_CONFIG := cyanogen_a3ultexx_defconfig
 
 # TWRP
-DEVICE_RESOLUTION := 720x1280
+DEVICE_RESOLUTION := 540x960
