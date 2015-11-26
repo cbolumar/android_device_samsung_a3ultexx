@@ -1,4 +1,4 @@
-# Copyright (C) 2015 The CyanogenMod Project
+# Copyright (C) 2015 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,18 +11,16 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-# Also get non-open-source specific aspects if available
-$(call inherit-product-if-exists, vendor/samsung/a3ultexx/a3ultexx-vendor.mk)
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Boot animation
-TARGET_SCREEN_HEIGHT := 960
-TARGET_SCREEN_WIDTH := 540
+# Inherit from a3ultexx device
+$(call inherit-product, device/samsung/a3ultexx/device.mk)
 
-# Device overlay
-DEVICE_PACKAGE_OVERLAYS += device/samsung/a3ultexx/overlay
-
-# Inherit from a3-common
-$(call inherit-product, device/samsung/a3-common/common.mk)
-
+# Set those variables here to overwrite the inherited values.
+PRODUCT_NAME := full_a3ultexx
+PRODUCT_DEVICE := a3ultexx
+PRODUCT_BRAND := samsung
+PRODUCT_MANUFACTURER := samsung
+PRODUCT_MODEL := SM-A300FU
